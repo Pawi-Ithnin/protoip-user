@@ -2,25 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>PERKIM</title>
+  <title>PERKIM Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Selamat Datang ke</h1>
-    <h2>PERKIM</h2>
 
-    <p>Sistem Keahlian</p>
+<div class="card">
+  <h1>Pertubuhan Kebajikan<br>Islam Malaysia</h1>
+  <p class="tagline">"Islam is <span>Brotherhood</span>"</p>
 
-    <a href="index.html">
-      <button>Login</button>
-    </a>
-
-    <br><br>
-
-    <a href="register.html">
-      <button>Sign Up</button>
-    </a>
+  <div class="tabs">
+    <a class="active">Log In</a>
+    <a href="register.html">Sign In</a>
   </div>
+
+  <p class="welcome">Welcome back! Please sign in to your account.</p>
+
+  <form id="loginForm">
+    <label>Email</label>
+    <input type="email" id="loginEmail" placeholder="your@email.com" required>
+
+    <label>Password</label>
+    <input type="password" id="loginPassword" required>
+
+    <button type="submit">Log In</button>
+  </form>
+
+  <p class="footer">
+    Don't have an account?
+    <a href="register.html">Sign Up here</a>
+  </p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
