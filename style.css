@@ -1,53 +1,89 @@
 body {
+  background: #f0f4f8;
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-.container {
-  background-color: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-  width: 300px;
-}
-h2, h3 {
+
+.card {
+  background: #fff;
+  width: 360px;
+  padding: 30px;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-style: italic;
+  color: #555;
+}
+.tagline span {
+  color: #2f8f6f;
+  font-weight: bold;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 20px 0;
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #888;
+  font-weight: bold;
+}
+
+.tabs .active {
+  color: #2f8f6f;
+  border-bottom: 2px solid #2f8f6f;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
 input {
   width: 100%;
-  padding: 8px;
-  margin: 8px 0;
-  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
+
 button {
   width: 100%;
-  padding: 10px;
-  background-color: #007BFF;
+  margin-top: 20px;
+  padding: 12px;
+  background: #2f8f6f;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
 }
+
 button:hover {
-  background-color: #0056b3;
+  background: #257a5f;
 }
-a {
-  color: #007BFF;
+
+.footer {
+  margin-top: 15px;
+  font-size: 13px;
+}
+.footer a {
+  color: #2f8f6f;
   text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
-li {
-  background: #e9ecef;
-  margin: 5px 0;
-  padding: 8px;
-  border-radius: 5px;
 }
