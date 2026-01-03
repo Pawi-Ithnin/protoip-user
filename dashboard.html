@@ -7,19 +7,24 @@
 </head>
 <body>
 
-  <div class="dashboard">
-    <h1>Papan Pemuka</h1>
-    <p>Selamat datang ke Sistem Keahlian PERKIM</p>
+<div class="dashboard">
+  <h2>Papan Pemuka</h2>
+  <p>Selamat datang ke Sistem Keahlian PERKIM</p>
 
-    <button onclick="logout()">Log Keluar</button>
-  </div>
+  <button onclick="logout()">Log Keluar</button>
+</div>
 
-  <script>
-    function logout() {
-      localStorage.removeItem("user");
-      window.location.href = "index.html";
-    }
-  </script>
+<script>
+  // Sekat masuk dashboard tanpa login
+  if (!localStorage.getItem("user")) {
+    window.location.href = "index.html";
+  }
+
+  function logout() {
+    localStorage.removeItem("user");
+    window.location.href = "index.html";
+  }
+</script>
 
 </body>
 </html>
