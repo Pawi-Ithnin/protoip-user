@@ -1,60 +1,30 @@
-// ===== REGISTER =====
-const registerForm = document.getElementById('registerForm');
-if(registerForm){
-  registerForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+// REGISTER
+document.getElementById("registerForm")?.addEventListener("submit", function(e){
+  e.preventDefault();
 
-    let users = JSON.parse(localStorage.getItem('users') || '[]');
-    
-    // Semak email dah wujud tak
-    if(users.some(u => u.email === email)){
-      alert('Email sudah digunakan!');
-      return;
-    }
+  const user = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value
+  };
 
-    users.push({name, email, password});
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Berjaya daftar!');
-    window.location.href = 'index.html';
-  });
-}
+  localStorage.setItem("user", JSON.stringify(user));
+  alert("Pendaftaran berjaya");
+  window.location.href = "index.html";
+});
 
-// ===== LOGIN =====
-const loginForm = document.getElementById('loginForm');
-if(loginForm){
-  loginForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
+// LOGIN
+document.getElementById("loginForm")?.addEventListener("submit", function(e){
+  e.preventDefault();
 
-    let users = JSON.parse(localStorage.getItem('users') || '[]');
-    const user = users.find(u => u.email === email && u.password === password);
-    
-    if(user){
-      localStorage.setItem('currentUser', JSON.stringify(user));
-      window.location.href = 'dashboard.html';
-    } else {
-      alert('Email atau password salah!');
-    }
-  });
-}
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
 
-// ===== DASHBOARD =====
-const userList = document.getElementById('userList');
-if(userList){
-  let users = JSON.parse(localStorage.getItem('users') || '[]');
-  users.forEach(u => {
-    let li = document.createElement('li');
-    li.textContent = `${u.name} (${u.email})`;
-    userList.appendChild(li);
-  });
-}
+  const user = JSON.parse(localStorage.getItem("user"));
 
-// ===== LOGOUT =====
-function logout(){
-  localStorage.removeItem('currentUser');
-  window.location.href = 'index.html';
-}
+  if (user && user.email === email && user.password === password) {
+    window.location.href = "dashboard.html";
+  } else {
+    alert("Email atau password salah");
+  }
+});
